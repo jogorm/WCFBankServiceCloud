@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="JSONCloudBank" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2015-04.2.6">
+  <Role name="WCFServiceWebRole1">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=storageaccountabc;AccountKey=IuWSQsTqRpm3K6I165qegnSjqUcSmQB/5Hf2ZxYcjQXrdFDQVxruzlXwPYWIBBBTW5lNOb+QoXIL0xuMU0mb2w==" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

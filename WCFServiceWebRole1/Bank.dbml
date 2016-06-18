@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ABCBanking" Class="BankDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=JOAKIM\SQLEXPRESS;Initial Catalog=ABCBanking;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ABCBankingConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Account" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="Acc_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="balance" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="running_totals" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="first_name" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="last_name" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="postcode" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="telephone" Type="System.String" DbType="NChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="pin" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="overdraft" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Association Name="Account_Transaction" Member="Transactions" ThisKey="Acc_ID" OtherKey="acc_id" Type="Transaction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transactions" Member="Transactions">
+    <Type Name="Transaction">
+      <Column Name="Trans_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="amount" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="datetime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="acc_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Account_Transaction" Member="Account" ThisKey="acc_id" OtherKey="Acc_ID" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
