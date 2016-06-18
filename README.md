@@ -7,4 +7,9 @@ It communicates with a web application made with Angular.js, a mobile applicatio
 The service receives REST-requests from the different applications and returns JSON data. 
 The web service is created with C# in Visual Studio.
 
+The different interfaces can be found here:
+Android: https://github.com/jogorm/ABCBankingGroup/tree/master
+Web App: https://github.com/jogorm/ABCBankAngularInterface
+Console app: https://github.com/jogorm/ATMBankService
+
 This project is no longer active!
